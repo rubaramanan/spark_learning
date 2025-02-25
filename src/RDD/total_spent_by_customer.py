@@ -5,6 +5,7 @@ sc = SparkContext(conf=conf)
 
 file = sc.textFile('/opt/bitnami/spark/data/customer-orders.csv')
 
+
 def get_data(line: str):
     line = line.split(',')
     client_id = int(line[0])
@@ -13,7 +14,7 @@ def get_data(line: str):
 
 
 line = file.map(get_data)
-total_sales = line.reduceByKey(lambda x, y: x+y)
+total_sales = line.reduceByKey(lambda x, y: x + y)
 
 sort = total_sales.map(lambda xy: (xy[1], xy[0])).sortByKey()
 for i in sort.collect():
