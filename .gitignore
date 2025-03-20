@@ -4,3 +4,4 @@
 /pyspark
 /src/SparkSql/data_sources/name_color_partition.parquet/
 /src/SparkSql/data_sources/spark-warehouse/
+.idea/
