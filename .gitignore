@@ -4,4 +4,20 @@
 /pyspark
 /src/SparkSql/data_sources/name_color_partition.parquet/
 /src/SparkSql/data_sources/spark-warehouse/
+# VS Code
+.vscode/
+
+# PyCharm
 .idea/
+
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.Python
+venv/
+env/
+*.egg-info/
+# Jupyter Notebook checkpoints
+.ipynb_checkpoints/
