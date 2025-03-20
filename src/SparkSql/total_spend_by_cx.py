@@ -1,6 +1,6 @@
 from pyspark.sql import SparkSession
-from pyspark.sql.types import StructType, StructField, StringType, IntegerType, FloatType 
 from pyspark.sql import functions as func
+from pyspark.sql.types import StructType, StructField, IntegerType, FloatType
 
 session = SparkSession.builder.appName('cx total').getOrCreate()
 
@@ -14,7 +14,7 @@ df = session.read.schema(schema).csv('/opt/bitnami/spark/data/customer-orders.cs
 
 df = df.select('client_id', 'sales')
 
-tot_sale = df.groupby('client_id').agg(func.round(func.sum('sales'),2).alias('total_sales')).sort('total_sales')
+tot_sale = df.groupby('client_id').agg(func.round(func.sum('sales'), 2).alias('total_sales')).sort('total_sales')
 
 tot_sale.show(tot_sale.count())
 
