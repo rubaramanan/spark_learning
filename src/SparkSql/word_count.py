@@ -1,7 +1,6 @@
 from pyspark.sql import SparkSession
 from pyspark.sql import functions as func
 
-
 session = SparkSession.builder.appName('word count').getOrCreate()
 
 df = session.read.text('/opt/bitnami/spark/data/Book')
@@ -17,7 +16,7 @@ count = wordsLower.groupBy('word').count()
 countSort = count.sort('count')
 countSort.show()
 
-#it will show all data
+# it will show all data
 countSort.show(countSort.count())
 # wordsLower.show()
 
