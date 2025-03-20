@@ -1,0 +1,6 @@
+/data/parquet/
+/data/temp/
+/notebook start.txt
+/pyspark
+/src/SparkSql/data_sources/name_color_partition.parquet/
+/src/SparkSql/data_sources/spark-warehouse/
