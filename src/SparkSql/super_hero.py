@@ -20,7 +20,7 @@ graphWithHero = graph.withColumn('split', func.split(func.col('value'), ' ')) \
 sortHeros = graphWithHero.sort(func.col('total_connections').desc()).first()
 
 super_hero = names.filter(sortHeros[0] == func.col('hero_id')).select('hero_name').first()
-print(sortHeros)
+
 print(f"Super hero is {super_hero[0]}, {sortHeros[1]} people liked him.")
 
 session.stop()
